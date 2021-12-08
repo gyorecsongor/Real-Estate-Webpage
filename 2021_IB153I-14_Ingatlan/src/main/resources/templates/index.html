@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Főoldal</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header th:replace="header :: header"></header>
+    <div class="hirdetes">
+        <h2>Hirdetesek:</h2>
+    </div>
+    <div class="hirdetes_kartya_lista">
+        <div class="kartya" th:each="advert : ${adverts} ">
+            <a th:href="@{'hirdetes?id=' + ${advert.advert_id}}">
+                <img class="kep" src="../assets/hirdetes_kep.jpg" alt="kep" weight="250" height="250">
+                <div class="details">
+                    <p><span th:text="${advert.title}"></span><br>
+                        <span th:text="${advert.type}"></span>, <span th:text="${advert.area}"></span>, <span
+                            th:text="${advert.location}"></span>
+                    </p>
+                    <div class="functions">
+                        <a sec:authorize="isAuthenticated()"
+                            th:href="@{/delete/{id}(id=${advert.advert_id})}">Törlés</a>
+                        <a sec:authorize="isAuthenticated()" th:href="@{/addFavourite/{id}(id=${advert.advert_id})}">Kedvelés</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</body>
+
+</html>

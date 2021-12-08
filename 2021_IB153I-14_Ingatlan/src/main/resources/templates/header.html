@@ -1,0 +1,29 @@
+<header style="background-color: rgba(0, 0, 0, 0.753)
+!important; border-radius: 3px !important;" th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://thymeleaf.org">
+
+    <div style="display: inline; background-color: #47455400;" class="button-nav">
+        <a href="index" style="font-size: medium; text-decoration: none;">INGATLAN 2.0</a>
+    </div>
+    <button sec:authorize="isAuthenticated()" class="button-nav"><a href="favorites"
+            style="text-decoration: none; color: white;">Kedvencek</a></button>
+    <button sec:authorize="isAuthenticated()" class="button-nav"><a href="new"
+            style="text-decoration: none; color:white">Új
+            hirdetés</a></button>
+    <div class="navbar-text navbar-right">
+        <a sec:authorize="!isAuthenticated()" href="login">
+            <img src="assets/person_white_24dp.svg" alt="user_icon" class="header_icon">
+        </a>
+
+        <a sec:authorize="isAuthenticated()" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            style="text-decoration: none;text-indent: 5px; " class="wait" disabled>
+            Bejelentkezve, mint:
+            <span sec:authentication="name" disabled></span>
+        </a>
+        <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post"
+            class="button-nav-logout">
+            <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;"
+                class="logout_button">Kijelentkezés</a>
+        </form>
+    </div>
+</header>

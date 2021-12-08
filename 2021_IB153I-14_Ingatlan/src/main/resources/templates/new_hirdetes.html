@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="hu" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Új hirdetés</title>
+    <link rel="stylesheet" href="css/new_hirdetes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login_reg.css">
+</head>
+
+<body>
+    <header th:replace="header :: header"></header>
+    <div class="container_new_hidetes container">
+        <form name="new_hirdetes" th:action="@{/add}" th:object="${advert}" method="post"
+            class="form-add-hirdetes-container">
+            <h2 class="form-signin-heading">Új hirdetés hozzáadás </h2>
+            <input type="text" id="Cím" name="Cím" th:field="*{title}" class="form-add-hirdetes" placeholder="Cím" />
+            <input type="text" id="Leírás" name="Leírás" th:field="*{description}" class="form-add-hirdetes"
+                placeholder="Leírás" />
+            <input type="text" id="tags" name="Tagek" th:field="*{tags}" class="form-add-hirdetes"
+                placeholder="Tagek" />
+            <select id="type" name="Típus" th:field="*{type}">
+                <option th:value="Ház" th:text="Ház"></option>
+                <option th:value="Lakás" th:text="Lakás"></option>
+            </select>
+            <input type="file" id="avatar" name="avatar" class="form-add-hirdetes" accept="image/png, image/jpeg">
+            <input type="text" id="area" name="Terület" th:field="*{area}" class="form-add-hirdetes"
+                placeholder="Terület" />
+            <input type="text" id="roomCount" name="Szobák száma" th:field="*{roomCount}" class="form-add-hirdetes"
+                placeholder="Szobák száma" />
+            <input type="text" id="location" name="Helyszín" th:field="*{location}" class="form-add-hirdetes"
+                placeholder="Helyszín" />
+            Berendezett: <br><input type="checkbox" id="furnished" name="Berendezett?" th:checked="*{furnished}"
+                class="form-add-hirdetes" />
+
+            <button class="btn btn-lg btn-primary btn-block upload" type="submit">Feltölt</button>
+        </form>
+    </div>
+</body>
+<script>
+    document.getElementById("roomCount").value = "";
+</script>
+
+</html>

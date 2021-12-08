@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiba</title>
+</head>
+<body>
+
+<div class="container">
+
+    <article>
+        <header>
+            <h1 th:text="${error}">Ez itt a gond</h1>
+        </header>
+
+        <section>
+            <p th:text="${message}"> Ez gond.</p>
+            <p th:text="Eleresi_ut_ + ${path}"> Elérési út.</p>
+            <p th:text="Hibakod_ + ${status}"> Státusz</p>
+            <p th:text="${timestamp}"> Időpont</p>
+        </section>
+
+    </article>
+
+</div>
+
+
+</body>
+</html>

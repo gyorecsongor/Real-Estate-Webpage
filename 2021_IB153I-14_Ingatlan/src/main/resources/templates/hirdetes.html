@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hirdetés</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hirdetes.css">
+</head>
+
+<body>
+    <header th:replace="header :: header"></header>
+
+    <div class="hirdetes-adat-container">
+        <div class="hirdetes-title">
+            <p class="hirdetes-text" th:text="${title}"> </p>
+            <button sec:authorize="isAuthenticated()" class="button-nav"><a th:href="@{'edit?id=' + ${id}}" style="text-decoration: none; color:white">Szerkesztés</a></button>
+        </div>
+        <div class="hirdetes-left-panel">
+            <div class="star" sec:authorize="isAuthenticated()">
+                <input id="star-checkbox" type="checkbox">
+                <label for="star-checkbox" id="star">☆</label>
+            </div>
+            <!--        <form sec:authorize="isAuthenticated()" action="#"  th:action="@{/addFavourite}" th:object="${advert}" method="post">-->
+            <!--            <div>-->
+
+
+            <!--                &lt;!&ndash;              <input type="text" th:value="${id}" name="real_estate_id" >&ndash;&gt;-->
+            <!--                <button type="submit"><img alt="Kedvelés" border="0" class="star-checkbox"  src="../static/assets/hirdetes_kep.jpg"  width="30px" >-->
+            <!--                </button>-->
+            <!--            </div>-->
+            <!--        </form>-->
+            <img src="../assets/hirdetes_kep.jpg" alt="kep">
+            <hr>
+            <p class="hirdetes-description" th:text="${description}"></p>
+        </div>
+        <div class="hirdetes-details-panel">
+            <p>Tagek: <br>
+                <b th:text="${tags}"></b>
+            </p>
+            <p>Fajtája: <br>
+                <b th:text="${type}"></b>
+            </p>
+            <p>Területe: <br>
+                <b th:text="${area}"></b> <b>m<sup>2</sup></b>
+            </p>
+            <p>Szobák száma: <br>
+                <b th:text="${roomCount}"></b>
+            </p>
+            <p>Helye: <br>
+                <b th:text="${location}"></b>
+            </p>
+            <p>Berendezett: <br>
+            <b th:switch="${furnished}">
+                <span th:case="true">igen</span>
+                <span th:case="false">nem</span>
+            </b>
+            </p>
+            <p>A hirdetés feladója: <br>
+                <b th:text="${useremail}"></b>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

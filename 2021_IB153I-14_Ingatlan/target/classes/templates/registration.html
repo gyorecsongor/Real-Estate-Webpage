@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login_reg.css">
+</head>
+
+<body>
+<header th:replace="header :: header"></header>
+<div class="container">
+    <form name="registration" th:action="@{/reg}" th:object="${user}" method="post" class="form-signin">
+        <h2 class="form-signin-heading">Kérlek regisztrálj</h2>
+        <input type="text" id="fullname" name="fullname" th:field="*{fullname}" class="form-control" placeholder="Teljes név"  />
+        <input type="text" id="email" name="username" th:field="*{email}" class="form-control" placeholder="E-mail cím"  />
+        <input type="password" id="password" name="password" th:field="*{password}"  class="form-control" placeholder="Jelszó" />
+        <input type="text" id="phonenumber" name="phonenumber" th:field="*{phonenumber}"  class="form-control" placeholder="Telefonszám" />
+        <input type="text" id="birthdate" name="birthdate" th:field="*{birthdate}"  class="form-control" placeholder="Születési dátum" />
+
+        <!--ide majd a userben levo adatokkal kiegesziteni az inputot   -->
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Regisztráció</button>
+    </form>
+</div>
+
+
+</body>
+
+</html>

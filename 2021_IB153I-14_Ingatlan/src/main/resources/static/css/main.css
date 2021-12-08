@@ -1,0 +1,215 @@
+body {
+    background-image: url("../assets/background.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+    position: sticky; top: 0.7vw;
+    backdrop-filter: blur(10px);
+    
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.705);
+    color: #fff;
+}
+
+header a {
+    color: white;
+}
+
+header{
+    margin: 5px;
+}
+
+.underline{
+    text-decoration: none;
+
+}
+.button-nav{
+    text-decoration: none !important;
+    background-color: #c1c5c05d;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 10px 32px;
+    margin: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.button-nav-logout{
+    background-color: #af2121;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 10px 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button-nav-logout:hover {
+    background-color: #e76060;
+}
+.wait {cursor: url('data:image/x-icon;base64,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MGAaNl8fQ249UHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSmchAa7cbSpEmSIg/T4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////+AAH/8AAB/+AAAD/gAAAf4AAAD/AAAA/wAAAf8AAAH/AAAD/wAAA/8AAAf/AAAH/4AAB/+AAA//4AAP//wAP//+D////w////4P///8B////Af///wH///8B////Af///wH///8B////g//////////////////w=='), auto !important;}
+
+.logout_button {
+    text-decoration: none !important;
+    text-align: center;
+}
+
+.account_button {
+    background-color: #111111;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.button-nav:hover {
+    background-color: rgb(128, 216, 73);
+}
+
+.navbar-right {
+    margin-left: auto;
+    margin-right: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-right a {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.kartya {
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin: 2vw;
+
+    transition-property: transform;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+
+.kartya:hover {
+    transform: scale(1.05, 1.05);
+    background: rgb(130,64,126);
+    background: linear-gradient(213deg, rgba(130,64,126,0.5) 7%, rgba(148,104,149,0.5) 28%, rgba(246,176,236,0.5) 88%);
+
+}
+
+.kartya a {
+    color: white;
+    text-decoration: none;
+}
+
+.kep {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.functions {
+    position:relative;
+}
+.functions a:first-child {
+    bottom: 0;
+    left:0;
+    position: absolute;
+}
+.functions a:last-child {
+    bottom: 0;
+    right:0;
+    position: absolute;
+ }
+.functions a:hover {
+    font-weight: bold;
+}
+
+.hirdetes{
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    width: 10%;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    margin-left: 2%;
+    color: white;
+}
+
+.hirdetes_kartya_lista {
+    display: flex;
+
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.form-add-hirdetes-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 25%;
+    width: 25%;
+
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: white;
+
+    padding: 20px;
+    margin: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 2px 2px 10px #888888;
+}
+
+.form-add-hirdetes{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align:start;
+}
+
+#type{
+    background-color: #80a666;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.upload{
+    background-color: #80a666;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}

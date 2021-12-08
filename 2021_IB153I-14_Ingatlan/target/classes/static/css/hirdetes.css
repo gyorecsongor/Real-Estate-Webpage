@@ -1,0 +1,95 @@
+.hirdetes-adat-container {
+    background-color: transparent;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+
+}
+
+.hirdetes-title {
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.hirdetes-text{
+    margin: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+}
+
+.hirdetes-left-panel {
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+
+    width: 68.5%;
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+#star {
+    position: relative;
+    font-size: 40px;
+    color: white;
+}
+#star:hover {
+    cursor: pointer;
+}
+#star-checkbox {
+    display: none;
+}
+#star-checkbox:checked + #star:after {
+    position: absolute;
+    content: "★";
+    top: -6.5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: yellow;
+}
+#star-checkbox:checked + #star {
+    color: rgba(0,0,0,0);
+}
+
+.hirdetes-left-panel img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.hirdetes-description {
+    text-align: justify-all;
+    padding: 10px;
+}
+
+hr {
+    width: 100%;
+}
+
+.hirdetes-details-panel {
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: white;
+
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
